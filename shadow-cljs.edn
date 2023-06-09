@@ -1,0 +1,23 @@
+{:deps true
+ :dev-http {5309 "classpath:public"}
+ :builds {:browser {:target :browser
+                    :output-dir "resources/public/js/browser"
+                    :compiler-options {:infer-externs :auto
+                                       :reader-features #{:cljs :browser}}
+                    :asset-path "/js/browser"
+                    :modules {:browser {:init-fn tools.drilling.uikit.browser/init
+                                        :entries [tools.drilling.uikit.browser]}}
+                    :devtools {:before-load tools.drilling.uikit.browser/suspend
+                               :after-load tools.drilling.uikit.browser/refresh
+                               :preloads [com.fulcrologic.fulcro.inspect.preload
+                                          com.fulcrologic.fulcro.inspect.dom-picker-preload]
+                               :repl-pprint true}}
+          :native {:target :react-native
+                   :init-fn tools.drilling.uikit.native/init
+                   :modules {:native {:init-fn tools.drilling.uikit.native/init
+                                      :entries [tools.drilling.uikit.native]}}
+                   :output-dir "native"
+                   :compiler-options {:infer-externs :auto
+                                      :reader-features #{:cljs :native}}
+                   :devtools {:autoload true
+                              :preloads [expo.keep-awake]}}}}

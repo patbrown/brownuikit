@@ -1,1 +1,7 @@
 /node_modules/
+/.cpcache/
+/.expo/
+/.nrepl-port
+/.shadow-cljs/
+/resources/public/js/*
+/native/

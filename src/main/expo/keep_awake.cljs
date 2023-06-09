@@ -1,0 +1,4 @@
+(ns ^:dev/once expo.keep-awake
+  (:require ["expo-keep-awake" :refer [activateKeepAwakeAsync]]))
+
+(activateKeepAwakeAsync)

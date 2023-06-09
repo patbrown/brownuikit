@@ -4,7 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "npx shadow-cljs server",
+    "start": "npx expo start",
+    "android": "npx expo start --android",
+    "ios": "npx expo start --ios",
+    "web": "npx expo start --web",
+    "web-only": "npx expo start --web-only",
+    "release-native": "npx shadow-cljs release native",
+    "release-browser": "npx shadow-cljs release browser",
+    "watch-native": "npx shadow-cljs watch native",
+    "watch-browser": "npx shadow-cljs watch browser",
+    "eject": "npx expo eject",
+    "eas-build-post-install": "npx shadow-cljs release app"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +30,13 @@
     "create-react-class": "^15.7.0",
     "echarts": "^5.4.2",
     "expo": "^48.0.19",
+    "expo-splash-screen": "^0.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "^0.71.10",
+    "react-native": "0.71.8",
     "react-native-paper": "^5.8.0",
-    "react-native-safe-area-context": "^4.5.3",
-    "react-native-web": "^0.19.4",
+    "react-native-safe-area-context": "4.5.0",
+    "react-native-web": "~0.18.10",
     "shadow-cljs": "^2.23.3"
   }
 }
